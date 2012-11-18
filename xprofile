@@ -1,0 +1,4 @@
+exec dbus-launch nm-applet &
+exec dbus-launch gnome-power-manager & 
+exec urxvtd -q -f &
+
