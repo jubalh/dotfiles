@@ -4,21 +4,37 @@ filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
+"Plugin management
 Bundle 'gmarik/vundle'
+"wiki for vim
 Bundle 'vim-scripts/vimwiki'
-"Bundle 'vim-scripts/ShowMarks'
+"show marks
+Bundle 'kshenoy/vim-signature'
+"color theme
 Bundle 'altercation/vim-colors-solarized'
+"better status line
+Bundle 'Lokaltog/vim-powerline'
+"completion
 Bundle 'Shougo/neocomplcache'
+"snippets
+Bundle 'Shougo/neosnippet'
+"snippets collection
+Bundle 'honza/snipmate-snippets'
+"explorer
 Bundle 'scrooloose/nerdtree'
+"commenting
 Bundle 'scrooloose/nerdcommenter'
+"bar which shows tags
 Bundle 'majutsushi/tagbar'
-Bundle 'garbas/snipmate'
-Bundle 'scrooloose/snipmate-snippets'
-Bundle 'ervandew/supertab'
+"git
 Bundle 'tpope/vim-fugitive'
+"easy editing
+Bundle 'tpope/vim-surround'
+"todo.txt file format
 Bundle 'sideshowcoder/vimtodotxt'
-Bundle 'fholgado/minibufexpl.vim'
+"save/load sessions
 Bundle 'xolox/vim-session'
+Bundle 'kien/ctrlp.vim'
 
 filetype plugin indent on
 
@@ -51,7 +67,7 @@ set softtabstop=4
 "set expandtab "use spaces instead of tabs
 " use retab to change existing tabs into spaces
 
-set fileformats=unix
+set fileformats=dos
 scriptencoding utf-8
 set encoding=utf-8
 set fileencoding=utf-8
@@ -85,7 +101,7 @@ endif
 
 "if colorscheme == 'solarized'
 let time_dependend = 0
-if time_dependend == 1 
+if time_dependend == 1
 	if strftime("%H") < 12
 		set background=light
 	else
@@ -104,8 +120,6 @@ if has('win32') || has('win64')
 	endif
 endif
 
-let g:session_autoload = 'no'
-
 "MAPS
 "build tag files
 map C-F12 :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .CR
@@ -122,17 +136,27 @@ inoremap <F5>d <C-R>=strftime("%Y-%m-%d")<CR>
 "Buffers
 nnoremap <F5>b :buffers<CR>:buffer<Space>
 
+let g:session_autoload = 'no'
+
 " COMPLETION
-" OmniCppComplete
-au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
-let OmniCpp_NamespaceSearch = 1
-let OmniCpp_GlobalScopeSearch = 1
-let OmniCpp_ShowAccess = 1
-let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
-let OmniCpp_MayCompleteDot = 1 " autocomplete after .
-let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
-let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
-let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
-" automatically open and close the popup menu / preview window
-au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
+let g:neocomplcache_enable_at_startup = 1
+let g:neosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#snippets_directory='~/.vim/bundle/snipmate-snippets/snippets'
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
+if has("autocmd")
+	autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+	autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+	autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+	autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+	autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+endif
