@@ -1,10 +1,12 @@
+" vim:fdm=marker
 set nocompatible
 
 filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
-"Plugin management
+"plugins {{{
+"plugin management
 Bundle 'gmarik/vundle'
 "wiki for vim
 Bundle 'vim-scripts/vimwiki'
@@ -30,21 +32,34 @@ Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-fugitive'
 "easy editing
 Bundle 'tpope/vim-surround'
-"todo.txt file format
+"todo.txt syntax
 Bundle 'sideshowcoder/vimtodotxt'
 "save/load sessions
 Bundle 'xolox/vim-session'
 Bundle 'kien/ctrlp.vim'
-
+"css syntax
+Bundle 'lepture/vim-css'
+"show color as background around css color
+"Bundle 'skammer/vim-css-color'
+Bundle 'chrisbra/color_highlight'
+"zen coding
+Bundle 'mattn/zencoding-vim'
+Bundle 'vim-scripts/YankRing.vim'
+Bundle 'uguu-org/vim-matrix-screensaver'
+Bundle 'henrik/vim-indexed-search'
+Bundle 'mattn/benchvimrc-vim'
+Bundle 'scrooloose/syntastic'
+Bundle 'mutewinter/vim-indent-guides'
+"easymotion, colorv.vim
+"}}}
+" vim {{{
 filetype plugin indent on
 
-set cm=blowfish
-
 syntax on
+set cm=blowfish
 set autoread
 set autoindent
 set number
-
 set hidden
 set showmode
 set hlsearch
@@ -59,26 +74,25 @@ set noerrorbells
 set mouse=a
 set cmdheight=2
 set laststatus=2
-
 set backspace=2
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 "set expandtab "use spaces instead of tabs
 " use retab to change existing tabs into spaces
-
-set fileformats=unix
+"set fileformats=unix
 scriptencoding utf-8
 set encoding=utf-8
 set fileencoding=utf-8
+set ofu=syntaxcomplete#Complete
+"}}}
+
+"Look {{{
 set list
 set listchars=tab:>-,trail:·
 if has("linebreak")
   let &sbr = nr2char(8618).' '
 endif
-
-set ofu=syntaxcomplete#Complete
-
 if has("autocmd")
 	autocmd ColorScheme * highlight SpecialKey guifg=DarkYellow ctermfg=DarkYellow
 	autocmd ColorScheme * highlight NonText guifg=DarkYellow ctermfg=DarkYellow
@@ -88,6 +102,7 @@ if has("autocmd")
 endif
 
 colorscheme solarized
+"TODO: nur wenn unicode zeichen verfuegbar let g:Powerline_symbols = 'fancy'
 
 if has("gui_running")
 	"colorscheme wombat
@@ -96,6 +111,7 @@ if has("gui_running")
 	"no menubar
 	set guioptions-=m
 else
+	set t_Co=256
 	"colorscheme wombat256mod
 endif
 
@@ -119,14 +135,14 @@ if has('win32') || has('win64')
 		au GUIEnter * simalt ~x
 	endif
 endif
-
-"MAPS
+"}}}
+" mappings {{{
 "build tag files
 map C-F12 :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .CR
 "toggle extra windows
 map <F8> :TagbarToggle<CR>
 map <F6>n :NERDTreeToggle<CR>
-"toggle chars
+"toggle special characters
 map <F6>l :set list!<CR>
 "vimwiki back
 map <BS> <Plug>VimwikiGoBackWord
@@ -135,10 +151,8 @@ nnoremap <F5>d "=strftime("%Y-%m-%d")<CR>P
 inoremap <F5>d <C-R>=strftime("%Y-%m-%d")<CR>
 "Buffers
 nnoremap <F5>b :buffers<CR>:buffer<Space>
-
-let g:session_autoload = 'no'
-
-" COMPLETION
+"}}}
+" completion {{{
 set completeopt=menuone,menu,longest,preview
 let g:neocomplcache_enable_at_startup = 1
 let g:neosnippet#enable_snipmate_compatibility = 1
@@ -160,3 +174,5 @@ if has("autocmd")
 	autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 	autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 endif
+"}}}
+let g:session_autoload = 'no'
