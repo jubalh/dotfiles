@@ -67,7 +67,7 @@ set softtabstop=4
 "set expandtab "use spaces instead of tabs
 " use retab to change existing tabs into spaces
 
-set fileformats=dos
+set fileformats=unix
 scriptencoding utf-8
 set encoding=utf-8
 set fileencoding=utf-8
