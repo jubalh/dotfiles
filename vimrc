@@ -45,11 +45,17 @@ Bundle 'chrisbra/color_highlight'
 "zen coding
 Bundle 'mattn/zencoding-vim'
 Bundle 'vim-scripts/YankRing.vim'
+"just playing around
 Bundle 'uguu-org/vim-matrix-screensaver'
 Bundle 'henrik/vim-indexed-search'
 Bundle 'mattn/benchvimrc-vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'mutewinter/vim-indent-guides'
+"automatically close xml/html tags
+Bundle 'sukima/xmledit'
+Bundle 'tpope/vim-ragtag'
+"ruby
+Bundle 'vim-ruby/vim-ruby'
 "easymotion, colorv.vim
 "}}}
 " vim {{{
