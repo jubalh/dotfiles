@@ -19,6 +19,10 @@ if [[ $1 == 'linux' ]] ; then
 	link_to Xresources ~/.Xresources
 fi
 
+if [[ $1 == 'osx' ]] ; then
+	link_to slate ~/.slate
+fi
+
 link_to zshrc ~/.zshrc
 link_to vimrc ~/.vimrc
 link_to vimperatorrc ~/.vimperatorrc
