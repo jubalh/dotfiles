@@ -17,10 +17,12 @@ if [[ $1 == 'linux' ]] ; then
 	link_to xprofile ~/.xprofile
 	link_to Xdefaults ~/.Xdefaults
 	link_to Xresources ~/.Xresources
+	link_to tmux.conf ~/.tmux.conf
 fi
 
 if [[ $1 == 'osx' ]] ; then
 	link_to slate ~/.slate
+	link_to tmux.conf ~/.tmux.conf
 fi
 
 link_to zshrc ~/.zshrc
