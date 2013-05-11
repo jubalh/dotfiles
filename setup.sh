@@ -23,6 +23,7 @@ fi
 if [[ $1 == 'osx' ]] ; then
 	link_to slate ~/.slate
 	link_to tmux.conf ~/.tmux.conf
+	link_to iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
 fi
 
 link_to zshrc ~/.zshrc
