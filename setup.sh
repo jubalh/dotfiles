@@ -1,5 +1,7 @@
 #!/bin/bash
 
+PATH_OMZ=~/.oh-my-zsh
+
 function link_to(){
 	rm -f $2
 	ln -s ~/.dotfiles/$1 $2
@@ -26,6 +28,9 @@ if [[ $1 == 'osx' ]] ; then
 	link_to iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
 fi
 
+if [[ ! -d "$PATH_OMZ" ]] ; then
+	git clone http://github.com/robbyrussell/oh-my-zsh.git $PATH_OMZ
+fi
 link_to zshrc ~/.zshrc
 link_to vimrc ~/.vimrc
 link_to vimperatorrc ~/.vimperatorrc
