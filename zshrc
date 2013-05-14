@@ -12,7 +12,13 @@ ZSH_THEME="af-magic"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-linuxlogo
+
+#artwork
+if [[ uname == "Linux" ]] ; then
+#	if [[ command -v linuxlogo > /dev/null ]] ; then
+		linuxlogo
+#	fi
+fi
 
 #vi mode
 set -o vi
