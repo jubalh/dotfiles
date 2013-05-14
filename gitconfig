@@ -1,0 +1,26 @@
+[user]
+	name = Michael Vetter
+	email = g.bluehut@gmail.com
+
+[core]
+	editor = vim
+	autocrlf = false #input
+
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+
+[merge]
+	tool = vimdiff
+[mergetool]
+	prompt = false
+
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = true
+
+#[http]
+#	proxy = proxy.name.com:8080

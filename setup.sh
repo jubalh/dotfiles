@@ -34,3 +34,4 @@ fi
 link_to zshrc ~/.zshrc
 link_to vimrc ~/.vimrc
 link_to vimperatorrc ~/.vimperatorrc
+link_to gitconfig ~/.gitconfig
