@@ -13,3 +13,6 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 linuxlogo
+
+#vi mode
+set -o vi
