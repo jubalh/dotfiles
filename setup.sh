@@ -1,6 +1,7 @@
 #!/bin/bash
 
 PATH_OMZ=~/.oh-my-zsh
+PATH_VUNDLE=~/.vim/bundle/vundle
 
 function link_to(){
 	rm -f $2
@@ -31,9 +32,15 @@ if [[ $1 == 'osx' ]] ; then
 fi
 
 if [[ ! -d "$PATH_OMZ" ]] ; then
-	git clone http://github.com/robbyrussell/oh-my-zsh.git $PATH_OMZ
+	git clone https://github.com/robbyrussell/oh-my-zsh.git $PATH_OMZ
 fi
 link_to zshrc ~/.zshrc
+
+if [[ ! -d "$PATH_VUNDLE" ]] ; then
+	git clone https://github.com/gmarik/vundle.git $PATH_VUNDLE
+fi
 link_to vimrc ~/.vimrc
+vim +BundleInstall +qall
+
 link_to vimperatorrc ~/.vimperatorrc
 link_to gitconfig ~/.gitconfig
