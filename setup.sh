@@ -8,6 +8,11 @@ function link_to(){
 	ln -s ~/.dotfiles/$1 $2
 }
 
+function nix(){
+	link_to tmux.conf ~/.tmux.conf
+	link_to vifmrc ~/.vifm/vifmrc
+}
+
 if [[ $1 == 'linux' ]] ; then
 	link_to gtkrc-2.0 ~/.gtkrc-2.0
 	mkdir -p ~/.config/gtk-3.0
@@ -20,15 +25,12 @@ if [[ $1 == 'linux' ]] ; then
 	link_to xprofile ~/.xprofile
 	link_to Xdefaults ~/.Xdefaults
 	link_to Xresources ~/.Xresources
-	link_to tmux.conf ~/.tmux.conf
-	link_to vifmrc ~/.vifm/vifmrc
 fi
 
 if [[ $1 == 'osx' ]] ; then
 	link_to slate ~/.slate
-	link_to tmux.conf ~/.tmux.conf
 	link_to iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
-	link_to vifmrc ~/.vifm/vifmrc
+	nix
 fi
 
 if [[ ! -d "$PATH_OMZ" ]] ; then
