@@ -20,12 +20,14 @@ if [[ $1 == 'linux' ]] ; then
 	link_to Xdefaults ~/.Xdefaults
 	link_to Xresources ~/.Xresources
 	link_to tmux.conf ~/.tmux.conf
+	link_to vifmrc ~/.vifm/vifmrc
 fi
 
 if [[ $1 == 'osx' ]] ; then
 	link_to slate ~/.slate
 	link_to tmux.conf ~/.tmux.conf
 	link_to iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
+	link_to vifmrc ~/.vifm/vifmrc
 fi
 
 if [[ ! -d "$PATH_OMZ" ]] ; then
