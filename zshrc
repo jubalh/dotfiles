@@ -11,7 +11,6 @@ ZSH_THEME="af-magic"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
 
-bindkey -v
 
 source $ZSH/oh-my-zsh.sh
 
@@ -24,3 +23,13 @@ source ~/.rvm/scripts/rvm
 #ALIASES
 alias tm='tmux'
 alias v='vim'
+
+#artwork
+if [[ uname == "Linux" ]] ; then
+#	if [[ command -v linuxlogo > /dev/null ]] ; then
+		linuxlogo
+#	fi
+fi
+
+#vi mode
+set -o vi
