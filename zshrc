@@ -11,20 +11,28 @@ ZSH_THEME="af-magic"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
 
-
 source $ZSH/oh-my-zsh.sh
 
-cat $ZSH/ilu.txt
+#PATHS
+PATH_QT="$HOME/installed/Qt5.0.0/5.0.0/clang_64/bin"
+if [[ -d "$PATH_QT" ]] ; then
+	PATH=$PATH:$PATH_QT
+fi
 
-PATH=$PATH:$HOME/installed/Qt5.0.0/5.0.0/clang_64/bin
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-source ~/.rvm/scripts/rvm
+if [[ -d "$HOME/.rvm/" ]] ; then
+	PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+	source ~/.rvm/scripts/rvm
+fi
 
 #ALIASES
 alias tm='tmux'
 alias v='vim'
 
-#artwork
+#ARTWORK
+PATH_ART="$ZSH/ilu.txt"
+if [[ -f "$PATH_ART" ]] ; then
+	cat $PATH_ART
+fi
 if [[ uname == "Linux" ]] ; then
 #	if [[ command -v linuxlogo > /dev/null ]] ; then
 		linuxlogo
