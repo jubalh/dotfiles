@@ -25,7 +25,7 @@
 #[http]
 #	proxy = proxy.name.com:8080
 
-[alisas]
+[alias]
 	co = checkout
 	com = commit
 	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
