@@ -7,9 +7,8 @@ filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
-"#######################
-"BUNDLEs
-"#######################
+"=======================
+"BUNDLEs {{{
 
 Bundle 'gmarik/vundle'
 Bundle 'vim-scripts/vimwiki'
@@ -38,10 +37,9 @@ Bundle 'mattn/benchvimrc-vim'
 Bundle 'mutewinter/vim-indent-guides'
 Bundle 'airblade/vim-gitgutter'
 "easymotion, colorv.vim
-
-"#######################
-"GENERAL SETTINGS
-"#######################
+"}}}
+"=======================
+"GENERAL SETTINGS {{{
 
 filetype plugin indent on
 
@@ -115,10 +113,9 @@ if has("autocmd")
 	autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 	autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 endif
-
-"#######################
-"MAPPINGS
-"#######################
+" }}}
+"=======================
+"MAPPINGS {{{
 
 "toggle special characters
 map <F6>l :set list!<CR>
@@ -127,10 +124,9 @@ nnoremap <F5>d "=strftime("%Y-%m-%d")<CR>P
 inoremap <F5>d <C-R>=strftime("%Y-%m-%d")<CR>
 "Buffers
 nnoremap <F5>b :buffers<CR>:buffer<Space>
-
-"#######################
-"NERD* SETTINGS
-"#######################
+" }}}
+"=======================
+"NERD* SETTINGS {{{
 
 map <F6>n :NERDTreeToggle<CR>
 "toggle special characters
@@ -152,21 +148,23 @@ if has('conceal')
 	set conceallevel=2 concealcursor=i
 endif
 
-"#######################
-"SESSOIN SETTINGS
-"#######################
+"=======================
+"SESSION SETTINGS {{{
 
 let g:session_autoload = 'no'
 let g:session_autosave = 'no'
+" }}}
 
-"#######################
-"TAGBAR SETTINGS
-"#######################
+"=======================
+"TAGBAR SETTINGS {{{
 
 map <F8> :TagbarToggle<CR>
+" }}}
 
-"#######################
-"VIMWIKI SETTINGS
-"#######################
+"=======================
+"VIMWIKI SETTINGS {{{
 
 map <BS> <Plug>VimwikiGoBackWord
+" }}}
+
+" vim:fdm=marker
