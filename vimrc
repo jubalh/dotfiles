@@ -9,7 +9,6 @@ call vundle#rc()
 
 "=======================
 "BUNDLEs {{{
-
 Bundle 'gmarik/vundle'
 Bundle 'vim-scripts/vimwiki'
 Bundle 'vim-scripts/YankRing.vim'
@@ -132,6 +131,7 @@ map <F6>n :NERDTreeToggle<CR>
 "toggle special characters
 map <F6>l :set list!<CR>
 
+
 let g:neocomplcache_enable_at_startup = 1
 let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#snippets_directory='~/.vim/bundle/snipmate-snippets/snippets'
@@ -147,20 +147,18 @@ smap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" 
 if has('conceal')
 	set conceallevel=2 concealcursor=i
 endif
-
+" }}}
 "=======================
 "SESSION SETTINGS {{{
 
 let g:session_autoload = 'no'
 let g:session_autosave = 'no'
 " }}}
-
 "=======================
 "TAGBAR SETTINGS {{{
 
 map <F8> :TagbarToggle<CR>
 " }}}
-
 "=======================
 "VIMWIKI SETTINGS {{{
 
