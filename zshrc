@@ -1,7 +1,10 @@
 ZSH=$HOME/.oh-my-zsh
 
-# possible: "random"
-ZSH_THEME="af-magic"
+ZSH_THEME="ys"
+
+#others I like
+#ZSH_THEME="af-magic"
+#possible: "random"
 
 # Comment this out to disable weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
