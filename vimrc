@@ -35,6 +35,7 @@ Bundle 'henrik/vim-indexed-search'
 Bundle 'mattn/benchvimrc-vim'
 Bundle 'mutewinter/vim-indent-guides'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'dagwieers/asciidoc-vim'
 "easymotion, colorv.vim
 "}}}
 "=======================
