@@ -129,9 +129,6 @@ nnoremap <F5>b :buffers<CR>:buffer<Space>
 "NERD* SETTINGS {{{
 
 map <F6>n :NERDTreeToggle<CR>
-"toggle special characters
-map <F6>l :set list!<CR>
-
 
 let g:neocomplcache_enable_at_startup = 1
 let g:neosnippet#enable_snipmate_compatibility = 1
