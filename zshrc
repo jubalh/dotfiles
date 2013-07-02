@@ -47,3 +47,8 @@ fi
 
 #vi mode
 set -o vi
+
+#FOR CORRECT ENCODING AND LOOK
+export TERM=xterm-256color
+export LC_CTYPE=de_DE.UTF-8
+export LANG=de_DE.UTF-8
