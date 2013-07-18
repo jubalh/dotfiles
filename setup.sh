@@ -42,6 +42,8 @@ if [[ ! -d "$PATH_VUNDLE" ]] ; then
 	git clone https://github.com/gmarik/vundle.git $PATH_VUNDLE
 fi
 link_to vimrc ~/.vimrc
+mkdir -p ~/.vim/ftplugin
+link_to ruby.vim ~/.vim/ftplugin/ruby.vim
 vim +BundleInstall +qall
 
 link_to vimperatorrc ~/.vimperatorrc
