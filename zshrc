@@ -30,16 +30,24 @@ if [[ -d "$HOME/.rvm/" ]] ; then
 	source ~/.rvm/scripts/rvm
 fi
 
+if [[ -d "$HOME/scripts" ]] ; then
+	PATH=$PATH:$HOME/scripts
+fi
+
 #ALIASES
 alias tm='tmux'
 alias v='vim'
+#using brew ctags; newer; recursive support
+if [[ `uname` == "Darwin" ]] ; then
+	alias ctags="`brew --prefix`/bin/ctags"
+fi
 
 #ARTWORK
 PATH_ART="$ZSH/ilu.txt"
 if [[ -f "$PATH_ART" ]] ; then
 	cat $PATH_ART
 fi
-if [[ uname == "Linux" ]] ; then
+if [[ `uname` == "Linux" ]] ; then
 #	if [[ command -v linuxlogo > /dev/null ]] ; then
 		linuxlogo
 #	fi
