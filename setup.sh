@@ -1,4 +1,7 @@
-#!/bin/bash
+#!/bin/zsh
+
+#to have acces to aliases. like my alias to use homebrews ctags instead of osx's.
+source ~/.zshrc
 
 PATH_OMZ=~/.oh-my-zsh
 PATH_VUNDLE=~/.vim/bundle/vundle
@@ -45,6 +48,12 @@ link_to vimrc ~/.vimrc
 mkdir -p ~/.vim/ftplugin
 link_to ruby.vim ~/.vim/ftplugin/ruby.vim
 vim +BundleInstall +qall
+mkdir -p ~/.vim/tags
+ctags -R --c++-kinds=+p --fields=+iaS --extra=+q -f ~/.vim/tags/cppstd /usr/include/c++/4.2.1
+#memo for other stuff:
+#ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ -f gl /usr/include/GL/   # for OpenGL
+#ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ -f sdl /usr/include/SDL/ # for SDL
+#ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ -f qt4 /usr/include/qt4/ # for QT4
 
 link_to vimperatorrc ~/.vimperatorrc
 link_to gitconfig ~/.gitconfig

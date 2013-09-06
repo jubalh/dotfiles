@@ -36,7 +36,9 @@ Bundle 'mattn/benchvimrc-vim'
 Bundle 'mutewinter/vim-indent-guides'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'dagwieers/asciidoc-vim'
+Bundle 'kien/ctrlp.vim'
 "easymotion, colorv.vim
+Bundle 'vim-scripts/OmniCppComplete'
 "}}}
 "=======================
 "GENERAL SETTINGS {{{
@@ -86,7 +88,7 @@ endif
 colorscheme solarized
 
 "TODO: nur wenn unicode zeichen verfuegbar let
-"	g:Powerline_symbols = 'fancy'
+"g:powerline_symbols = 'fancy'
 
 if has("gui_running")
 	"no toolbar
@@ -112,7 +114,13 @@ if has("autocmd")
 	autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 	autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 	autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+	autocmd BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
 endif
+" }}}
+"=======================
+"TAGS {{{
+set tags+=~/.vim/tags/cppstd
 " }}}
 "=======================
 "MAPPINGS {{{
@@ -124,7 +132,10 @@ nnoremap <F5>d "=strftime("%Y-%m-%d")<CR>P
 inoremap <F5>d <C-R>=strftime("%Y-%m-%d")<CR>
 "Buffers
 nnoremap <F5>b :buffers<CR>:buffer<Space>
+"recreate local tags file
+map <F5>t :!ctags -R --sort=yes –c++-kinds=+p –fields=+iaS –extra=+q .<CR>
 " }}}
+"
 "=======================
 "NERD* SETTINGS {{{
 
