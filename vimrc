@@ -14,7 +14,7 @@ Bundle 'vim-scripts/vimwiki'
 Bundle 'vim-scripts/YankRing.vim'
 Bundle 'kshenoy/vim-signature'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'bling/vim-airline'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/neosnippet'
 Bundle 'honza/vim-snippets'
@@ -88,7 +88,10 @@ endif
 colorscheme solarized
 
 "TODO: nur wenn unicode zeichen verfuegbar let
-"g:powerline_symbols = 'fancy'
+"display buffers on top
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_enable_branch = 1
+let g:airline_enable_syntastic = 1
 
 if has("gui_running")
 	"no toolbar
@@ -120,7 +123,31 @@ endif
 " }}}
 "=======================
 "TAGS {{{
+
 set tags+=~/.vim/tags/cppstd
+" }}}
+"=======================
+"COMPLETION {{{
+
+" OmniCppComplete
+let OmniCpp_NamespaceSearch = 1
+let OmniCpp_GlobalScopeSearch = 1
+let OmniCpp_ShowAccess = 1
+let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
+let OmniCpp_MayCompleteDot = 1 " autocomplete after .
+let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
+let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
+let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+let OmniCpp_ShowPrototypeInAbbr = 1 " show function prototype
+let OmniCpp_SelectFirstItem = 2
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+set completeopt=menu,menuone
+" automatically open and close the popup menu / preview window
+if has("autocmd")
+	autocmd CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+endif
+
+set completeopt=menuone,menu,longest,preview
 " }}}
 "=======================
 "MAPPINGS {{{
@@ -133,7 +160,9 @@ inoremap <F5>d <C-R>=strftime("%Y-%m-%d")<CR>
 "Buffers
 nnoremap <F5>b :buffers<CR>:buffer<Space>
 "recreate local tags file
-map <F5>t :!ctags -R --sort=yes –c++-kinds=+p –fields=+iaS –extra=+q .<CR>
+map <F5>t :!ctags -R --exclude=.git --sort=yes –c++-kinds=+p –fields=+iaS –extra=+q .<CR>
+"set current directories created tags file to avail. tags
+set tags+=./tags
 " }}}
 "
 "=======================
