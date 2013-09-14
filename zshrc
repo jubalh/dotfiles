@@ -37,6 +37,9 @@ fi
 #ALIASES
 alias tm='tmux'
 alias v='vim'
+alias api='aptitude install'
+alias apr='aptitude remove'
+alias aps='aptitude search'
 #using brew ctags; newer; recursive support
 if [[ `uname` == "Darwin" ]] ; then
 	alias ctags="`brew --prefix`/bin/ctags"
