@@ -39,6 +39,7 @@ Bundle 'dagwieers/asciidoc-vim'
 Bundle 'kien/ctrlp.vim'
 "easymotion, colorv.vim
 Bundle 'vim-scripts/OmniCppComplete'
+Bundle 'vim-pandoc/vim-pandoc'
 "}}}
 "=======================
 "GENERAL SETTINGS {{{
@@ -83,6 +84,9 @@ if has("autocmd")
 	autocmd ColorScheme * highlight SpecialKey guifg=DarkYellow ctermfg=DarkYellow
 	autocmd ColorScheme * highlight NonText guifg=DarkYellow ctermfg=DarkYellow
 	autocmd ColorScheme * highlight ExtraWhitespace guifg=DarkYellow ctermfg=DarkYellow
+
+	"disable tmux statusbar while in vim
+	autocmd VimEnter,VimLeave * silent !tmux set status
 endif
 
 colorscheme solarized
@@ -92,6 +96,7 @@ colorscheme solarized
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_enable_branch = 1
 let g:airline_enable_syntastic = 1
+let g:airline_powerline_fonts = 0
 
 if has("gui_running")
 	"no toolbar
@@ -141,13 +146,12 @@ let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 let OmniCpp_ShowPrototypeInAbbr = 1 " show function prototype
 let OmniCpp_SelectFirstItem = 2
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-set completeopt=menu,menuone
+set completeopt=menuone,menu,longest,preview
 " automatically open and close the popup menu / preview window
 if has("autocmd")
 	autocmd CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 endif
 
-set completeopt=menuone,menu,longest,preview
 " }}}
 "=======================
 "MAPPINGS {{{
