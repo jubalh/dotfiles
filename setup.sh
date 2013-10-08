@@ -40,6 +40,7 @@ if [[ ! -d "$PATH_OMZ" ]] ; then
 	git clone https://github.com/robbyrussell/oh-my-zsh.git $PATH_OMZ
 fi
 link_to zshrc ~/.zshrc
+#chsh -s /bin/zsh
 
 if [[ ! -d "$PATH_VUNDLE" ]] ; then
 	git clone https://github.com/gmarik/vundle.git $PATH_VUNDLE
