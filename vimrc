@@ -98,6 +98,10 @@ let g:airline_enable_branch = 1
 let g:airline_enable_syntastic = 1
 let g:airline_powerline_fonts = 0
 
+let g:snips_author = "Michael Vetter"
+"folding is too slow
+let g:pandoc_no_folding = 1
+
 if has("gui_running")
 	"no toolbar
 	set guioptions-=T
