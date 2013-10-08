@@ -49,7 +49,7 @@ mkdir -p ~/.vim/ftplugin
 link_to ruby.vim ~/.vim/ftplugin/ruby.vim
 vim +BundleInstall +qall
 mkdir -p ~/.vim/tags
-ctags -R --c++-kinds=+p --fields=+iaS --extra=+q -f ~/.vim/tags/cppstd /usr/include/c++/4.2.1
+ctags -R --c++-kinds=+p --fields=+iaS --language-force=C++ --extra=+q -f ~/.vim/tags/cppstd /usr/include/c++/4.2.1
 #memo for other stuff:
 #ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ -f gl /usr/include/GL/   # for OpenGL
 #ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ -f sdl /usr/include/SDL/ # for SDL
