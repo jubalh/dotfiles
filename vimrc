@@ -166,7 +166,10 @@ map <F6>l :set list!<CR>
 nnoremap <F5>d "=strftime("%Y-%m-%d")<CR>P
 inoremap <F5>d <C-R>=strftime("%Y-%m-%d")<CR>
 "Buffers
+"show all open buffers
 nnoremap <F5>b :buffers<CR>:buffer<Space>
+"switch between last used buffers
+nmap <Tab> :b#<CR>
 "recreate local tags file
 map <F5>t :!ctags -R --exclude=.git --sort=yes –c++-kinds=+p –fields=+iaS –extra=+q .<CR>
 "set current directories created tags file to avail. tags
