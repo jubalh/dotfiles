@@ -81,7 +81,7 @@ if has("linebreak")
 endif
 
 if has("autocmd")
-	autocmd ColorScheme * highlight SpecialKey guifg=DarkYellow ctermfg=DarkYellow
+	autocmd ColorScheme * highlight SpecialKey guifg=DarkYellow ctermfg=57
 	autocmd ColorScheme * highlight NonText guifg=DarkYellow ctermfg=DarkYellow
 	autocmd ColorScheme * highlight ExtraWhitespace guifg=DarkYellow ctermfg=DarkYellow
 
@@ -113,7 +113,7 @@ endif
 
 if has('win32') || has('win64')
 	behave mswin
-	if has("gui_running") 
+	if has("gui_running")
 		set guifont=Consolas:h12
 		"maximize window
 		au GUIEnter * simalt ~x
