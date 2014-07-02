@@ -32,7 +32,6 @@ if [[ $1 == 'linux' ]] ; then
 	nix
 fi
 # }}}
-
 # OSX specific {{{
 if [[ $1 == 'osx' ]] ; then
 	link_to slate ~/.slate
@@ -62,15 +61,21 @@ link_to ruby.vim ~/.vim/ftplugin/ruby.vim
 vim +BundleInstall +qall
 
 #default config file for YouCompleteMe vim plugin
-link_to yvm_exta_conf.py ~/.vim/yvm_extra-conf.py
+link_to ycm_exta_conf.py ~/.vim/ycm_extra_conf.py
 
 #ctags
 mkdir -p ~/.vim/tags
-ctags -R --c++-kinds=+p --fields=+iaS --language-force=C++ --extra=+q -f ~/.vim/tags/cppstd /usr/include/c++/4.2.1
+ctags -R --fields=+S -f ~/.vim/tags/usrinclude /usr/include/
+
 #memo for other stuff:
-#ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ -f gl /usr/include/GL/   # for OpenGL
-#ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ -f sdl /usr/include/SDL/ # for SDL
-#ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ -f qt4 /usr/include/qt4/ # for QT4
+# c++ std lib; change version according to system
+#ctags -R --c++-kinds=+p --fields=+iaS --language-force=C++ --extra=+q -f ~/.vim/tags/cppstd /usr/include/c++/4.2.1
+#for OpenGl
+#ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ -f gl /usr/include/GL/
+# for SDL
+#ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ -f sdl /usr/include/SDL/
+#for Qt4
+#ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ -f qt4 /usr/include/qt4/
 # }}}
 
 link_to vimperatorrc ~/.vimperatorrc

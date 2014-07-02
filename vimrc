@@ -136,6 +136,7 @@ endif
 "=======================
 "TAGS {{{
 
+set tags+=~/.vim/tags/usrinclude
 set tags+=~/.vim/tags/cppstd
 " }}}
 "=======================
