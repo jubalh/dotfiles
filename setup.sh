@@ -62,6 +62,8 @@ vim +BundleInstall +qall
 
 #default config file for YouCompleteMe vim plugin
 link_to ycm_exta_conf.py ~/.vim/ycm_extra_conf.py
+cd ~/.vim/bundle/YouCompleteMe
+./install.sh --clang-completer
 
 #ctags
 mkdir -p ~/.vim/tags
@@ -77,8 +79,9 @@ ctags -R --fields=+S -f ~/.vim/tags/usrinclude /usr/include/
 #for Qt4
 #ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ -f qt4 /usr/include/qt4/
 # }}}
-
+# Misc {{{
 link_to vimperatorrc ~/.vimperatorrc
 link_to gitconfig ~/.gitconfig
+# }}}
 
 # vim:fdm=marker
