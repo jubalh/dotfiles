@@ -55,17 +55,17 @@ PATH_ART="$ZSH/ilu.txt"
 if [[ -f "$PATH_ART" ]] ; then
 	cat $PATH_ART
 fi
-if [[ `uname` == "Linux" ]] ; then
-#	if [[ command -v linuxlogo > /dev/null ]] ; then
-		linuxlogo
+#if [[ `uname` == "Linux" ]] ; then
+#	if [[ command -v linuxlogo >/dev/null 2>&1]] ; then
+#		linuxlogo
 #	fi
-fi
+#fi
 
 #vi mode
 set -o vi
 
 #variables
-export TERM=xterm-256color
+#export TERM=xterm-256color #shouldnt set TERM in the shell, the terminal emulator should do that
 export LC_CTYPE=de_DE.UTF-8
 export LANG=de_DE.UTF-8
 export EDITOR=vim
