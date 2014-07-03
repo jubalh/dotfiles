@@ -15,14 +15,13 @@ Bundle 'vim-scripts/YankRing.vim'
 Bundle 'kshenoy/vim-signature'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
-Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/neosnippet'
 Bundle 'honza/vim-snippets'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 Bundle 'majutsushi/tagbar'
-"Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-session'
@@ -40,6 +39,9 @@ Bundle 'kien/ctrlp.vim'
 "easymotion, colorv.vim
 Bundle 'vim-scripts/OmniCppComplete'
 Bundle 'vim-pandoc/vim-pandoc'
+Bundle 'guns/xterm-color-table.vim'
+Bundle 'sjl/gundo.vim'
+Bundle 'Valloric/YouCompleteMe'
 "}}}
 "=======================
 "GENERAL SETTINGS {{{
@@ -86,7 +88,7 @@ if has("autocmd")
 	autocmd ColorScheme * highlight ExtraWhitespace guifg=DarkYellow ctermfg=DarkYellow
 
 	"disable tmux statusbar while in vim
-	autocmd VimEnter,VimLeave * silent !tmux set status
+	"autocmd VimEnter,VimLeave * silent !tmux set status
 endif
 
 colorscheme solarized
@@ -171,7 +173,7 @@ nnoremap <F5>b :buffers<CR>:buffer<Space>
 "switch between last used buffers
 nmap <Tab> :b#<CR>
 "recreate local tags file
-map <F5>t :!ctags -R --exclude=.git --sort=yes –c++-kinds=+p –fields=+iaS –extra=+q .<CR>
+map <F5>t :!/usr/local/bin/ctags -R --exclude=.git --sort=yes –c++-kinds=+p –fields=+iaS –extra=+q .<CR>
 "set current directories created tags file to avail. tags
 set tags+=./tags
 " }}}
@@ -194,7 +196,6 @@ function! s:CloseIfOnlyNerdTreeLeft()
   endif
 endfunction
 
-let g:neocomplcache_enable_at_startup = 1
 let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#snippets_directory='~/.vim/bundle/snipmate-snippets/snippets'
 
@@ -225,6 +226,11 @@ map <F8> :TagbarToggle<CR>
 "VIMWIKI SETTINGS {{{
 
 map <BS> <Plug>VimwikiGoBackWord
+" }}}
+"
+"=======================
+"YouCompleteMe SETTINGS {{{
+let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
 " }}}
 
 " vim:fdm=marker
