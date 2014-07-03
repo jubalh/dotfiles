@@ -91,6 +91,7 @@ if has("autocmd")
 	"autocmd VimEnter,VimLeave * silent !tmux set status
 endif
 
+set background=dark
 colorscheme solarized
 
 "TODO: nur wenn unicode zeichen verfuegbar let
