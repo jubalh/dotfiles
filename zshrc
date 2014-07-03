@@ -30,6 +30,11 @@ if [[ -d "$HOME/.rvm/" ]] ; then
 	source ~/.rvm/scripts/rvm
 fi
 
+#on osx look in homebrew path before sytempath
+#so we use homebrew version of vim
+if [[ `uname` == "Darwin" ]] ; then
+	PATH=/usr/local/bin:/usr/local/sbin:$PATH
+fi
 if [[ -d "$HOME/scripts" ]] ; then
 	PATH=$PATH:$HOME/scripts
 fi
