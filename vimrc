@@ -42,6 +42,7 @@ Bundle 'vim-pandoc/vim-pandoc'
 Bundle 'guns/xterm-color-table.vim'
 Bundle 'sjl/gundo.vim'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'kien/rainbow_parentheses.vim'
 "}}}
 "=======================
 "GENERAL SETTINGS {{{
@@ -179,7 +180,6 @@ map <F5>t :!/usr/local/bin/ctags -R --exclude=.git --sort=yes â€“c++-kinds=+p â€
 "set current directories created tags file to avail. tags
 set tags+=./tags
 " }}}
-"
 "=======================
 "NERD* SETTINGS {{{
 
@@ -229,10 +229,16 @@ map <F8> :TagbarToggle<CR>
 
 map <BS> <Plug>VimwikiGoBackWord
 " }}}
-"
 "=======================
 "YouCompleteMe SETTINGS {{{
 let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
+" }}}
+"=======================
+"Rainbow Parentheses SETTINGS {{{
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 " }}}
 
 " vim:fdm=marker
