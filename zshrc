@@ -34,6 +34,12 @@ fi
 #so we use homebrew version of vim
 if [[ `uname` == "Darwin" ]] ; then
 	PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
+	#if MAMP is installed use its php version
+	PHPPATH="/Applications/MAMP/bin/php/php5.5.10/bin"
+	if [[ -d $PHPPATH ]] ; then
+		PATH=$PHPPATH:$PATH
+	fi
 fi
 if [[ -d "$HOME/scripts" ]] ; then
 	PATH=$PATH:$HOME/scripts
