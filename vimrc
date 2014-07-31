@@ -85,6 +85,8 @@ set fileformats=unix
 set fileencoding=utf-8
 scriptencoding utf-8
 
+let mapleader = ","
+
 set list
 set listchars=tab:>-,trail:·
 if has("linebreak")
@@ -102,7 +104,6 @@ endif
 
 set background=dark
 colorscheme molokai
-
 
 "folding is too slow
 let g:pandoc_no_folding = 1
@@ -169,16 +170,21 @@ endif
 "=======================
 "MAPPINGS {{{
 
+nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
+
 "toggle special characters
 map <F6>l :set list!<CR>
+
 "input date
 nnoremap <F5>d "=strftime("%Y-%m-%d")<CR>P
 inoremap <F5>d <C-R>=strftime("%Y-%m-%d")<CR>
+
 "Buffers
 "show all open buffers
 nnoremap <F5>b :buffers<CR>:buffer<Space>
 "switch between last used buffers
 nmap <Tab> :b#<CR>
+
 "recreate local tags file
 map <F5>t :!/usr/local/bin/ctags -R --exclude=.git --sort=yes –c++-kinds=+p –fields=+iaS –extra=+q .<CR>
 "set current directories created tags file to avail. tags
