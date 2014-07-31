@@ -12,10 +12,12 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'vim-scripts/vimwiki'
 Bundle 'vim-scripts/YankRing.vim'
+"show marks
 Bundle 'kshenoy/vim-signature'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
-Bundle 'Shougo/neosnippet'
+"Snippets plugin
+Bundle 'sirver/ultisnips'
+"Snippets collection
 Bundle 'honza/vim-snippets'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
@@ -41,8 +43,14 @@ Bundle 'vim-scripts/OmniCppComplete'
 Bundle 'vim-pandoc/vim-pandoc'
 Bundle 'guns/xterm-color-table.vim'
 Bundle 'sjl/gundo.vim'
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 Bundle 'kien/rainbow_parentheses.vim'
+"Colorschemes:
+Bundle 'w0ng/vim-hybrid'
+Bundle 'ciaranm/inkpot'
+Bundle 'morhetz/gruvbox'
+Bundle 'tomasr/molokai'
+Bundle 'chriskempson/vim-tomorrow-theme'
 "}}}
 "=======================
 "GENERAL SETTINGS {{{
@@ -93,7 +101,7 @@ if has("autocmd")
 endif
 
 set background=dark
-colorscheme solarized
+colorscheme molokai
 
 "TODO: nur wenn unicode zeichen verfuegbar let
 "display buffers on top
@@ -102,7 +110,24 @@ let g:airline_enable_branch = 1
 let g:airline_enable_syntastic = 1
 let g:airline_powerline_fonts = 0
 
-let g:snips_author = "Michael Vetter"
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_right_sep = '«'
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.whitespace = 'Ξ'
+
 "folding is too slow
 let g:pandoc_no_folding = 1
 
@@ -115,6 +140,9 @@ else
 	set t_Co=256
 endif
 
+if has('gui_macvim')
+	set guifont=Monaco:h12
+endif
 if has('win32') || has('win64')
 	behave mswin
 	if has("gui_running")
@@ -198,20 +226,6 @@ function! s:CloseIfOnlyNerdTreeLeft()
   endif
 endfunction
 
-let g:neosnippet#enable_snipmate_compatibility = 1
-let g:neosnippet#snippets_directory='~/.vim/bundle/snipmate-snippets/snippets'
-
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-" SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" For snippet_complete marker.
-if has('conceal')
-	set conceallevel=2 concealcursor=i
-endif
 " }}}
 "=======================
 "SESSION SETTINGS {{{
@@ -240,5 +254,6 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 " }}}
-
+set directory=.,$TEMP
 " vim:fdm=marker
+let g:UltiSnipsEditSplit="vertical"
