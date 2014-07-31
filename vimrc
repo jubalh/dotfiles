@@ -103,28 +103,26 @@ endif
 set background=dark
 colorscheme molokai
 
-"TODO: nur wenn unicode zeichen verfuegbar let
 "display buffers on top
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_enable_branch = 1
 let g:airline_enable_syntastic = 1
-let g:airline_powerline_fonts = 0
 
+" unicode symbols instead of powrline patched font
+let g:airline_powerline_fonts = 0
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
-
-" unicode symbols
-let g:airline_right_sep = '«'
-let g:airline_left_sep = '»'
+"let g:airline_right_sep = '«'
+"let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
+"let g:airline_symbols.linenr = '␊'
+"let g:airline_symbols.linenr = '␤'
 let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.linenr = '␤'
 let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.paste = 'Þ'
+"let g:airline_symbols.paste = '∥'
+"let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.whitespace = 'Ξ'
 
@@ -254,6 +252,4 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 " }}}
-set directory=.,$TEMP
 " vim:fdm=marker
-let g:UltiSnipsEditSplit="vertical"
