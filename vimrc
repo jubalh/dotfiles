@@ -103,28 +103,6 @@ endif
 set background=dark
 colorscheme molokai
 
-"display buffers on top
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_enable_branch = 1
-let g:airline_enable_syntastic = 1
-
-" unicode symbols instead of powrline patched font
-let g:airline_powerline_fonts = 0
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-"let g:airline_right_sep = '«'
-"let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '◀'
-"let g:airline_symbols.linenr = '␊'
-"let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-"let g:airline_symbols.paste = '∥'
-"let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.whitespace = 'Ξ'
 
 "folding is too slow
 let g:pandoc_no_folding = 1
@@ -252,4 +230,30 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 " }}}
+"=======================
+"Airline SETTINGS {{{
+"display buffers on top
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_enable_branch = 1
+let g:airline_enable_syntastic = 1
+
+" unicode symbols instead of powrline patched font
+let g:airline_powerline_fonts = 0
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+"let g:airline_right_sep = '«'
+"let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
+"let g:airline_symbols.linenr = '␊'
+"let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+"let g:airline_symbols.paste = '∥'
+"let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.whitespace = 'Ξ'
+" }}}
+
 " vim:fdm=marker
