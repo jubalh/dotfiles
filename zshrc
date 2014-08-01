@@ -35,10 +35,14 @@ fi
 if [[ `uname` == "Darwin" ]] ; then
 	PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
-	#if MAMP is installed use its php version
+	#if MAMP is installed use its php and mysql version
 	PHPPATH="/Applications/MAMP/bin/php/php5.5.10/bin"
 	if [[ -d $PHPPATH ]] ; then
 		PATH=$PHPPATH:$PATH
+	fi
+	MYSQLPATH="/Applications/MAMP/Library/bin"
+	if [[ -d $MYSQLPATH ]] ; then
+		PATH=$MYSQLPATH:$PATH
 	fi
 fi
 if [[ -d "$HOME/scripts" ]] ; then
