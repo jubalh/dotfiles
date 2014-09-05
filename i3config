@@ -11,7 +11,8 @@ client.urgent				#856E23		#900000			#F5DEB3
 set $mod Mod4
 
 # font for window titles. ISO 10646 = Unicode
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font pango:DejaVu Sans Mono, DejaVu 8
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -152,7 +153,8 @@ bar {
 		position		top
 		workspace_buttons	yes
 		colors {
-			background #0F0F0F
+#			background #0F0F0F
+			background #585858
 			statusline #F5DEB3
 			focused_workspace #F5DEB3 #666666
 			active_workspace #F5DEB3 #0F0F0F
@@ -169,4 +171,4 @@ workspace 5 output VGA-0
 
 #exec --no-startup-id nm-applet
 #exec --no-startup-id feh --bg-scale ~/pictures/wallpapers/Debian_Orange_by_monkeymagico.jpg
-exec /home/michael/scripts/start.sh 
+exec /home/michael/scripts/start.sh
