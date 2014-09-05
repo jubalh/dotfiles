@@ -165,9 +165,9 @@ bar {
 
 workspace 1 output LVDS
 workspace 2 output LVDS
-workspace 3 output VGA-0 
-workspace 4 output VGA-0 
-workspace 5 output VGA-0 
+workspace 3 output VGA-0
+workspace 4 output VGA-0
+workspace 5 output VGA-0
 
 #exec --no-startup-id nm-applet
 #exec --no-startup-id feh --bg-scale ~/pictures/wallpapers/Debian_Orange_by_monkeymagico.jpg
