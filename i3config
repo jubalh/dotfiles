@@ -34,7 +34,7 @@ bindsym $mod+d exec dmenu_run
 # file browser TODO
 
 # lock the screen
-bindsym $mod+c exec ~/scripts/lock.sh
+bindsym $mod+c exec i3lock
 
 # change wallpaper TODO
 
@@ -168,7 +168,3 @@ workspace 2 output LVDS
 workspace 3 output VGA-0
 workspace 4 output VGA-0
 workspace 5 output VGA-0
-
-#exec --no-startup-id nm-applet
-#exec --no-startup-id feh --bg-scale ~/pictures/wallpapers/Debian_Orange_by_monkeymagico.jpg
-exec /home/michael/scripts/start.sh
