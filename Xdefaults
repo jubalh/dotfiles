@@ -15,7 +15,7 @@ Xft.hintstyle:              hintslight
 !URxvt*termName:                rxvt-unicode
 URxvt.depth:                32
 URxvt.geometry:             90x30
-URxvt.transparent:          true
+URxvt.transparent:          false
 URxvt.shading:              15
 URxvt.fading:               0
 URxvt.loginShell:           true
@@ -37,7 +37,7 @@ URxvt.secondaryScroll:      true
 
 URxvt.perl-ext-common:      default,matcher
 URxvt.matcher.button:       1
-URxvt.urlLauncher:          firefox
+URxvt.url-launcher:         firefox-bin
 
 URxvt.cursorBlink:          true
 URxvt.cursorColor:          #657b83
