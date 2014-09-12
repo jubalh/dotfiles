@@ -25,7 +25,7 @@ bindsym $mod+Shift+Q kill
 
 # start dmenu
 #bindsym $mod+d exec dmenu_run '#010101' -nf '#85753A' -sb '#1E1E1E' -sf '#F5DEB3'
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec i3-dmenu-desktop
 #bindsym $mod+d exec ~/bin/bin/dmenu_run
 
 # start web browser
@@ -37,6 +37,10 @@ bindsym $mod+d exec dmenu_run
 bindsym $mod+c exec i3lock
 
 # change wallpaper TODO
+# exec ~/scripts/wallpaper.sh
+
+# take screenshot
+bindsym $mod+Shift+s exec ~/scripts/screenshot.sh
 
 # change focus
 bindsym $mod+h focus left
