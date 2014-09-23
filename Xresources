@@ -1,5 +1,5 @@
 ! Solarized color scheme for the X Window System
-
+/*
 ! Common
 
 #define S_yellow        #b58900
@@ -65,23 +65,24 @@
 *color13:                 S_violet
 *color14:                 S_base1
 *color15:                 S_base3
+*/
 
 ! Tango Theme
-URxvt.foreground: #C8C8C8
-URxvt.background: #323232
-URxvt.color0: #2E3436
-URxvt.color1: #CC0000
-URxvt.color2: #4E9A06
-URxvt.color3: #C4A000
-URxvt.color4: #3465A4
-URxvt.color5: #75507B
-URxvt.color6: #06989A
-URxvt.color7: #D3D7CF
-URxvt.color8: #555753
-URxvt.color9: #EF2929
-URxvt.color10: #8AE234
-URxvt.color11: #FCE94F
-URxvt.color12: #729FCF
-URxvt.color13: #AD7FA8
-URxvt.color14: #34E2E2
-URxvt.color15: #EEEEEC
+*foreground: #C8C8C8
+*background: #323232
+*color0: #2E3436
+*color1: #CC0000
+*color2: #4E9A06
+*color3: #C4A000
+*color4: #3465A4
+*color5: #75507B
+*color6: #06989A
+*color7: #D3D7CF
+*color8: #555753
+*color9: #EF2929
+*color10: #8AE234
+*color11: #FCE94F
+*color12: #729FCF
+*color13: #AD7FA8
+*color14: #34E2E2
+*color15: #EEEEEC
