@@ -172,3 +172,19 @@ workspace 2 output LVDS
 workspace 3 output VGA-0
 workspace 4 output VGA-0
 workspace 5 output VGA-0
+
+# When pressing "menu button" show a menu from which you can select to run an application
+set $MENU "gVim irssi vifm Firefox Thunderbird Shotwell PCManFM Sunflower"
+bindsym Menu mode $MENU
+mode $MENU {
+bindsym f exec firefox-bin, mode, "default"
+bindsym t exec thunderbird, mode "default"
+bindsym s exec Shotwell, mode "default"
+bindsym p exec pcmanfm, mode "default"
+bindsym g exec gvim, mode "default"
+bindsym u exec sunflower, mode "default"
+bindsym i exec urxvt -e irssi, mode "default"
+bindsym v exec urxvt -e vifm, mode "default"
+bindsym Return mode "default"
+bindsym Escape mode "default"
+}
