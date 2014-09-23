@@ -22,6 +22,7 @@
 	status = auto
 	branch = auto
 	interactive = true
+	ui = true
 
 #[http]
 #	proxy = proxy.name.com:8080
