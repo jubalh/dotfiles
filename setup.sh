@@ -5,6 +5,7 @@ source ~/.zshrc
 
 PATH_OMZ=~/.oh-my-zsh
 PATH_VUNDLE=~/.vim/bundle/vundle
+PATH_VIMP_COLORS=~/.vimperator/colors
 
 function link_to(){
 	rm -f $2
@@ -79,8 +80,13 @@ ctags -R --fields=+S -f ~/.vim/tags/usrinclude /usr/include/
 #for Qt4
 #ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ -f qt4 /usr/include/qt4/
 # }}}
-# Misc {{{
+# VIMPERATOR {{{
+if [[ ! -d "$PATH_VIMP_COLORS" ]] ; then
+	git clone https://github.com/vimpr/vimperator-colors $PATH_VIMP_COLORS
+fi
 link_to vimperatorrc ~/.vimperatorrc
+# }}}
+# MISC {{{
 link_to gitconfig ~/.gitconfig
 # }}}
 
