@@ -110,23 +110,26 @@ let g:pandoc_no_folding = 1
 
 if has("gui_running")
 	"no toolbar
-	set guioptions-=T
+	"	set guioptions-=T
 	"no menubar
-	set guioptions-=m
-else
-	set t_Co=256
-endif
-
-if has('gui_macvim')
-	set guifont=Monaco:h12
-endif
-if has('win32') || has('win64')
-	behave mswin
-	if has("gui_running")
+	"	set guioptions-=m
+	if has('gui_macvim')
+		set guifont=Monaco:h12
+	endif
+	if has('gui_gtk2')
+		set guifont=Monospace\ 13
+	endif
+	if has("gui_win32")
 		set guifont=Consolas:h12
 		"maximize window
 		au GUIEnter * simalt ~x
 	endif
+else
+	set t_Co=256
+endif
+
+if has('win32') || has('win64')
+	behave mswin
 endif
 
 if has("autocmd")
