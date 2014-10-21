@@ -19,7 +19,7 @@ URxvt.transparent:          false
 URxvt.shading:              15
 URxvt.fading:               0
 URxvt.loginShell:           true
-URxvt.saveLines:            50
+URxvt.saveLines:            5000
 URxvt.internalBorder:       3
 !URxvt.borderless:           0
 URxvt.lineSpace:            0
