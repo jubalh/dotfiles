@@ -23,12 +23,11 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 Bundle 'majutsushi/tagbar'
-Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-session'
-Bundle 'lepture/vim-css'
-Bundle 'skammer/vim-css-color'
+"Bundle 'lepture/vim-css'
+"Bundle 'skammer/vim-css-color'
 Bundle 'chrisbra/color_highlight'
 "web stuff Bundle 'mattn/emmet-vim'
 Bundle 'uguu-org/vim-matrix-screensaver'
@@ -39,11 +38,9 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'dagwieers/asciidoc-vim'
 Bundle 'kien/ctrlp.vim'
 "easymotion, colorv.vim
-Bundle 'vim-scripts/OmniCppComplete'
 Bundle 'vim-pandoc/vim-pandoc'
 Bundle 'guns/xterm-color-table.vim'
 Bundle 'sjl/gundo.vim'
-"Bundle 'Valloric/YouCompleteMe'
 Bundle 'kien/rainbow_parentheses.vim'
 "Colorschemes:
 Bundle 'w0ng/vim-hybrid'
@@ -132,43 +129,11 @@ if has('win32') || has('win64')
 	behave mswin
 endif
 
-if has("autocmd")
-	autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-	autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-	autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-	autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-	autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-	autocmd BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
-endif
-" }}}
 "=======================
 "TAGS {{{
 
-set tags+=~/.vim/tags/usrinclude
-set tags+=~/.vim/tags/cppstd
-" }}}
-"=======================
-"COMPLETION {{{
-
-" OmniCppComplete
-let OmniCpp_NamespaceSearch = 1
-let OmniCpp_GlobalScopeSearch = 1
-let OmniCpp_ShowAccess = 1
-let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
-let OmniCpp_MayCompleteDot = 1 " autocomplete after .
-let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
-let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
-let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
-let OmniCpp_ShowPrototypeInAbbr = 1 " show function prototype
-let OmniCpp_SelectFirstItem = 2
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-set completeopt=menuone,menu,longest,preview
-" automatically open and close the popup menu / preview window
-if has("autocmd")
-	autocmd CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-endif
-
+"set tags+=~/.vim/tags/usrinclude
+"set tags+=~/.vim/tags/cppstd
 " }}}
 "=======================
 "MAPPINGS {{{
@@ -189,7 +154,7 @@ nnoremap <F5>b :buffers<CR>:buffer<Space>
 nmap <Tab> :b#<CR>
 
 "recreate local tags file
-map <F5>t :!/usr/local/bin/ctags -R --exclude=.git --sort=yes –c++-kinds=+p –fields=+iaS –extra=+q .<CR>
+"map <F5>t :!/usr/local/bin/ctags -R --exclude=.git --sort=yes –c++-kinds=+p –fields=+iaS –extra=+q .<CR>
 "set current directories created tags file to avail. tags
 set tags+=./tags
 " }}}
@@ -227,10 +192,6 @@ map <F8> :TagbarToggle<CR>
 "VIMWIKI SETTINGS {{{
 
 map <BS> <Plug>VimwikiGoBackWord
-" }}}
-"=======================
-"YouCompleteMe SETTINGS {{{
-let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
 " }}}
 "=======================
 "Rainbow Parentheses SETTINGS {{{
