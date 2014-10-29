@@ -11,7 +11,8 @@ client.urgent				#856E23		#900000			#F5DEB3
 set $mod Mod4
 
 # font for window titles. ISO 10646 = Unicode
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font pango:DejaVu Sans Mono, DejaVu 8
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -24,7 +25,7 @@ bindsym $mod+Shift+Q kill
 
 # start dmenu
 #bindsym $mod+d exec dmenu_run '#010101' -nf '#85753A' -sb '#1E1E1E' -sf '#F5DEB3'
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec i3-dmenu-desktop
 #bindsym $mod+d exec ~/bin/bin/dmenu_run
 
 # start web browser
@@ -33,9 +34,13 @@ bindsym $mod+d exec dmenu_run
 # file browser TODO
 
 # lock the screen
-bindsym $mod+c exec ~/scripts/lock.sh
+bindsym $mod+c exec i3lock
 
 # change wallpaper TODO
+# exec ~/scripts/wallpaper.sh
+
+# take screenshot
+bindsym $mod+Shift+s exec ~/scripts/screenshot.sh
 
 # change focus
 bindsym $mod+h focus left
@@ -152,7 +157,8 @@ bar {
 		position		top
 		workspace_buttons	yes
 		colors {
-			background #0F0F0F
+#			background #0F0F0F
+			background #585858
 			statusline #F5DEB3
 			focused_workspace #F5DEB3 #666666
 			active_workspace #F5DEB3 #0F0F0F
@@ -163,10 +169,22 @@ bar {
 
 workspace 1 output LVDS
 workspace 2 output LVDS
-workspace 3 output VGA-0 
-workspace 4 output VGA-0 
-workspace 5 output VGA-0 
+workspace 3 output VGA-0
+workspace 4 output VGA-0
+workspace 5 output VGA-0
 
-#exec --no-startup-id nm-applet
-#exec --no-startup-id feh --bg-scale ~/pictures/wallpapers/Debian_Orange_by_monkeymagico.jpg
-exec /home/michael/scripts/start.sh 
+# When pressing "menu button" show a menu from which you can select to run an application
+set $MENU "gVim irssi vifm Firefox Thunderbird Shotwell PCManFM Sunflower"
+bindsym Menu mode $MENU
+mode $MENU {
+bindsym f exec firefox-bin, mode, "default"
+bindsym t exec thunderbird, mode "default"
+bindsym s exec Shotwell, mode "default"
+bindsym p exec pcmanfm, mode "default"
+bindsym g exec gvim, mode "default"
+bindsym u exec sunflower, mode "default"
+bindsym i exec urxvt -e irssi, mode "default"
+bindsym v exec urxvt -e vifm, mode "default"
+bindsym Return mode "default"
+bindsym Escape mode "default"
+}

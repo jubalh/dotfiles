@@ -12,13 +12,14 @@ Xft.hintstyle:              hintslight
 ! rxvt
 !-------------------------------------------------------------------------------
 
-!URxvt*termName:				rxvt-unicode
+!URxvt*termName:                rxvt-unicode
 URxvt.depth:                32
 URxvt.geometry:             90x30
 URxvt.transparent:          false
+URxvt.shading:              15
 URxvt.fading:               0
 URxvt.loginShell:           true
-URxvt.saveLines:            50
+URxvt.saveLines:            5000
 URxvt.internalBorder:       3
 !URxvt.borderless:           0
 URxvt.lineSpace:            0
@@ -26,8 +27,8 @@ URxvt.buffered:             true
 
 
 URxvt.allow_bold:           true
-URxvt*font:					xft:inconsolata:size=12:antialias=true
-URxvt*boldFont:				xft:inconsolata:size=14:antialias=true
+URxvt*font:                 xft:DejaVu Sans Mono:size=12:antialias=true
+URxvt*boldFont:             xft:DejaVu Sans Mono:size=14:antialias=true
 URxvt*letterSpace: -1
 
 URxvt.scrollStyle:          rxvt
@@ -36,7 +37,7 @@ URxvt.secondaryScroll:      true
 
 URxvt.perl-ext-common:      default,matcher
 URxvt.matcher.button:       1
-URxvt.urlLauncher:          firefox
+URxvt.url-launcher:         firefox
 
 URxvt.cursorBlink:          true
 URxvt.cursorColor:          #657b83
