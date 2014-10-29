@@ -27,7 +27,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-session'
-Bundle 'lepture/vim-css'
+Bundle 'hail2u/vim-css3-syntax'
 Bundle 'skammer/vim-css-color'
 Bundle 'chrisbra/color_highlight'
 "web stuff Bundle 'mattn/emmet-vim'
@@ -44,7 +44,12 @@ Bundle 'vim-pandoc/vim-pandoc'
 Bundle 'guns/xterm-color-table.vim'
 Bundle 'sjl/gundo.vim'
 "Bundle 'Valloric/YouCompleteMe'
+"Show parenthesis in different colors
 Bundle 'kien/rainbow_parentheses.vim'
+"Autoclose parenthesis, quotes and so on
+Bundle 'Raimondi/delimitMate'
+"Close HTML tags
+Bundle 'docunext/closetag.vim'
 "Colorschemes:
 Bundle 'w0ng/vim-hybrid'
 Bundle 'ciaranm/inkpot'
