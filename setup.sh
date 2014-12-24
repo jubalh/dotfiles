@@ -62,9 +62,9 @@ link_to ruby.vim ~/.vim/ftplugin/ruby.vim
 vim +BundleInstall +qall
 
 #default config file for YouCompleteMe vim plugin
-link_to ycm_exta_conf.py ~/.vim/ycm_extra_conf.py
-cd ~/.vim/bundle/YouCompleteMe
-./install.sh --clang-completer
+#link_to ycm_exta_conf.py ~/.vim/ycm_extra_conf.py
+#cd ~/.vim/bundle/YouCompleteMe
+#./install.sh --clang-completer
 
 #ctags
 mkdir -p ~/.vim/tags
