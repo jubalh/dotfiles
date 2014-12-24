@@ -74,8 +74,10 @@ fi
 #vi mode
 set -o vi
 
-#variables
+# variables
 #export TERM=xterm-256color #shouldnt set TERM in the shell, the terminal emulator should do that
 export LC_CTYPE=de_DE.UTF-8
 export LANG=de_DE.UTF-8
 export EDITOR=vim
+export GOPATH="$HOME/.golang"
+export PATH="$PATH:$GOPATH/bin"
