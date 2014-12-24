@@ -67,8 +67,8 @@ vim +BundleInstall +qall
 #./install.sh --clang-completer
 
 #ctags
-mkdir -p ~/.vim/tags
-ctags -R --fields=+S -f ~/.vim/tags/usrinclude /usr/include/
+#mkdir -p ~/.vim/tags
+#ctags -R --fields=+S -f ~/.vim/tags/usrinclude /usr/include/
 
 #memo for other stuff:
 # c++ std lib; change version according to system
