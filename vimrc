@@ -10,6 +10,7 @@ call vundle#rc()
 "=======================
 "BUNDLEs {{{
 Bundle 'gmarik/vundle'
+Bundle 'fatih/vim-go'
 Bundle 'vim-scripts/vimwiki'
 Bundle 'vim-scripts/YankRing.vim'
 "show marks
@@ -51,6 +52,7 @@ Bundle 'ciaranm/inkpot'
 Bundle 'morhetz/gruvbox'
 Bundle 'tomasr/molokai'
 Bundle 'chriskempson/vim-tomorrow-theme'
+Bundle 'joonty/vim-phpqa'
 "}}}
 "=======================
 "GENERAL SETTINGS {{{
@@ -164,6 +166,7 @@ set tags+=./tags
 "=======================
 "NERD* SETTINGS {{{
 
+let NERDTreeShowHidden=1
 map <F6>n :NERDTreeToggle<CR>
 
 " Close all open buffers on entering a window if the only
