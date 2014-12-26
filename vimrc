@@ -7,7 +7,6 @@ filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
-"=======================
 "BUNDLEs {{{
 Bundle 'gmarik/vundle'
 Bundle 'fatih/vim-go'
@@ -54,7 +53,6 @@ Bundle 'tomasr/molokai'
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'joonty/vim-phpqa'
 "}}}
-"=======================
 "GENERAL SETTINGS {{{
 
 filetype plugin indent on
@@ -105,7 +103,7 @@ if has("autocmd")
 endif
 
 set background=dark
-colorscheme molokai
+colorscheme Tomorrow-Night-Eighties
 
 "folding is too slow
 let g:pandoc_no_folding = 1
@@ -133,14 +131,12 @@ endif
 if has('win32') || has('win64')
 	behave mswin
 endif
-
-"=======================
+"}}}
 "TAGS {{{
 
 "set tags+=~/.vim/tags/usrinclude
 "set tags+=~/.vim/tags/cppstd
 " }}}
-"=======================
 "MAPPINGS {{{
 
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
@@ -163,7 +159,6 @@ nmap <Tab> :b#<CR>
 "set current directories created tags file to avail. tags
 set tags+=./tags
 " }}}
-"=======================
 "NERD* SETTINGS {{{
 
 let NERDTreeShowHidden=1
@@ -183,30 +178,25 @@ function! s:CloseIfOnlyNerdTreeLeft()
 endfunction
 
 " }}}
-"=======================
 "SESSION SETTINGS {{{
 
 let g:session_autoload = 'no'
 let g:session_autosave = 'no'
 " }}}
-"=======================
 "TAGBAR SETTINGS {{{
 
 map <F8> :TagbarToggle<CR>
 " }}}
-"=======================
 "VIMWIKI SETTINGS {{{
 
 map <BS> <Plug>VimwikiGoBackWord
 " }}}
-"=======================
 "Rainbow Parentheses SETTINGS {{{
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 " }}}
-"=======================
 "Airline SETTINGS {{{
 "display buffers on top
 let g:airline#extensions#tabline#enabled = 1
