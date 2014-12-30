@@ -91,16 +91,16 @@ if has("linebreak")
 endif
 
 if has("autocmd")
-	autocmd ColorScheme * highlight SpecialKey guifg=DarkYellow ctermfg=57
-	autocmd ColorScheme * highlight NonText guifg=DarkYellow ctermfg=DarkYellow
-	autocmd ColorScheme * highlight ExtraWhitespace guifg=DarkYellow ctermfg=DarkYellow
+	autocmd ColorScheme * highlight SpecialKey guifg=MediumPurple ctermfg=57
+	autocmd ColorScheme * highlight NonText guifg=MediumPurple ctermfg=DarkYellow
+	autocmd ColorScheme * highlight ExtraWhitespace guifg=MediumPurple ctermfg=DarkYellow
 
 	"disable tmux statusbar while in vim
 	"autocmd VimEnter,VimLeave * silent !tmux set status
 endif
 
 set background=dark
-colorscheme molokai
+colorscheme Tomorrow-Night
 
 "folding is too slow
 let g:pandoc_no_folding = 1
