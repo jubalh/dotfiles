@@ -7,9 +7,9 @@ filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
-"=======================
 "BUNDLEs {{{
 Bundle 'gmarik/vundle'
+Bundle 'fatih/vim-go'
 Bundle 'vim-scripts/vimwiki'
 Bundle 'vim-scripts/YankRing.vim'
 "show marks
@@ -26,8 +26,6 @@ Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-surround'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-session'
-"Bundle 'lepture/vim-css'
-"Bundle 'skammer/vim-css-color'
 Bundle 'chrisbra/color_highlight'
 "web stuff Bundle 'mattn/emmet-vim'
 Bundle 'uguu-org/vim-matrix-screensaver'
@@ -41,15 +39,20 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'vim-pandoc/vim-pandoc'
 Bundle 'guns/xterm-color-table.vim'
 Bundle 'sjl/gundo.vim'
+"Show parenthesis in different colors
 Bundle 'kien/rainbow_parentheses.vim'
+"Autoclose parenthesis, quotes and so on
+Bundle 'Raimondi/delimitMate'
+"Close HTML tags
+Bundle 'docunext/closetag.vim'
 "Colorschemes:
 Bundle 'w0ng/vim-hybrid'
 Bundle 'ciaranm/inkpot'
 Bundle 'morhetz/gruvbox'
 Bundle 'tomasr/molokai'
 Bundle 'chriskempson/vim-tomorrow-theme'
+Bundle 'joonty/vim-phpqa'
 "}}}
-"=======================
 "GENERAL SETTINGS {{{
 
 filetype plugin indent on
@@ -128,14 +131,12 @@ endif
 if has('win32') || has('win64')
 	behave mswin
 endif
-
-"=======================
+"}}}
 "TAGS {{{
 
 "set tags+=~/.vim/tags/usrinclude
 "set tags+=~/.vim/tags/cppstd
 " }}}
-"=======================
 "MAPPINGS {{{
 
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
@@ -158,9 +159,9 @@ nmap <Tab> :b#<CR>
 "set current directories created tags file to avail. tags
 set tags+=./tags
 " }}}
-"=======================
 "NERD* SETTINGS {{{
 
+let NERDTreeShowHidden=1
 map <F6>n :NERDTreeToggle<CR>
 
 " Close all open buffers on entering a window if the only
@@ -177,30 +178,25 @@ function! s:CloseIfOnlyNerdTreeLeft()
 endfunction
 
 " }}}
-"=======================
 "SESSION SETTINGS {{{
 
 let g:session_autoload = 'no'
 let g:session_autosave = 'no'
 " }}}
-"=======================
 "TAGBAR SETTINGS {{{
 
 map <F8> :TagbarToggle<CR>
 " }}}
-"=======================
 "VIMWIKI SETTINGS {{{
 
 map <BS> <Plug>VimwikiGoBackWord
 " }}}
-"=======================
 "Rainbow Parentheses SETTINGS {{{
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 " }}}
-"=======================
 "Airline SETTINGS {{{
 "display buffers on top
 let g:airline#extensions#tabline#enabled = 1
