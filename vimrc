@@ -36,7 +36,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'dagwieers/asciidoc-vim'
 Bundle 'kien/ctrlp.vim'
 "easymotion, colorv.vim
-Bundle 'vim-pandoc/vim-pandoc'
+"Bundle 'vim-pandoc/vim-pandoc'
 Bundle 'guns/xterm-color-table.vim'
 Bundle 'sjl/gundo.vim'
 "Show parenthesis in different colors
