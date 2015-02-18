@@ -12,7 +12,7 @@ ZSH_THEME="ys"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git symfony2)
 if [[ `uname` == "Darwin" ]]; then
 	plugins=($plugins osx brew)
 fi
@@ -36,7 +36,7 @@ if [[ `uname` == "Darwin" ]] ; then
 	PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 	#if MAMP is installed use its php and mysql version
-	PHPPATH="/Applications/MAMP/bin/php/php5.5.10/bin"
+	PHPPATH="/Applications/MAMP/bin/php/php5.6.2/bin"
 	if [[ -d $PHPPATH ]] ; then
 		PATH=$PHPPATH:$PATH
 	fi
