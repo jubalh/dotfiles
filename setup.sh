@@ -88,6 +88,7 @@ link_to vimperatorrc ~/.vimperatorrc
 # }}}
 # MISC {{{
 link_to gitconfig ~/.gitconfig
+link_to gitignore ~/.gitignore
 # }}}
 
 # vim:fdm=marker

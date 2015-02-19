@@ -6,6 +6,7 @@
 	editor = vim
 	autocrlf = false #input
 	whitespace = space-before-tab, trailing-space
+	excludesfile = ~/.gitignore
 
 [diff]
 	tool = vimdiff
