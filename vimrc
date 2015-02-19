@@ -52,6 +52,8 @@ Bundle 'morhetz/gruvbox'
 Bundle 'tomasr/molokai'
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'joonty/vim-phpqa'
+"Lets you "maximize" using c-w-o
+Bundle 'vim-scripts/ZoomWin'
 "}}}
 "GENERAL SETTINGS {{{
 
