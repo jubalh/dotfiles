@@ -54,6 +54,7 @@ Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'joonty/vim-phpqa'
 "Lets you "maximize" using c-w-o
 Bundle 'vim-scripts/ZoomWin'
+Bundle 'jeetsukumaran/vim-buffergator'
 "}}}
 "GENERAL SETTINGS {{{
 
@@ -152,9 +153,12 @@ inoremap <F5>d <C-R>=strftime("%Y-%m-%d")<CR>
 
 "Buffers
 "show all open buffers
+"i use buffergator for this now. take a look at <leader> b. lets see what i
+"like more.
 nnoremap <F5>b :buffers<CR>:buffer<Space>
 "switch between last used buffers
 nmap <Tab> :b#<CR>
+let g:buffergator_viewport_split_policy='B'
 
 "recreate local tags file
 "map <F5>t :!/usr/local/bin/ctags -R --exclude=.git --sort=yes –c++-kinds=+p –fields=+iaS –extra=+q .<CR>
@@ -164,21 +168,7 @@ set tags+=./tags
 "NERD* SETTINGS {{{
 
 let NERDTreeShowHidden=1
-map <F6>n :NERDTreeToggle<CR>
-
-" Close all open buffers on entering a window if the only
-" buffer that's left is the NERDTree buffer
-autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
-function! s:CloseIfOnlyNerdTreeLeft()
-  if exists("t:NERDTreeBufName")
-    if bufwinnr(t:NERDTreeBufName) != -1
-      if winnr("$") == 1
-        q
-      endif
-    endif
-  endif
-endfunction
-
+map <leader>n :NERDTreeToggle<CR>
 " }}}
 "SESSION SETTINGS {{{
 
