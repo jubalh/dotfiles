@@ -157,7 +157,12 @@ inoremap <F5>d <C-R>=strftime("%Y-%m-%d")<CR>
 "like more.
 nnoremap <F5>b :buffers<CR>:buffer<Space>
 "switch between last used buffers
-nmap <Tab> :b#<CR>
+nmap <Tab><Tab> :b#<CR>
+"switch through buffers
+nmap <Tab>b :bNext<CR>
+"switch through tabs
+nmap <Tab>t :tabn<CR>
+"show buffergator window (<leader>b) below window
 let g:buffergator_viewport_split_policy='B'
 
 "recreate local tags file
