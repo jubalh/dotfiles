@@ -107,6 +107,8 @@ endif
 
 set background=dark
 colorscheme Tomorrow-Night
+"silent that bell
+set vb
 
 "folding is too slow
 let g:pandoc_no_folding = 1
