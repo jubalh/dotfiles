@@ -55,6 +55,8 @@ Bundle 'joonty/vim-phpqa'
 "Lets you "maximize" using c-w-o
 Bundle 'vim-scripts/ZoomWin'
 Bundle 'jeetsukumaran/vim-buffergator'
+Bundle 'godlygeek/tabular'
+Bundle 'plasticboy/vim-markdown'
 "}}}
 "GENERAL SETTINGS {{{
 
