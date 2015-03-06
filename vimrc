@@ -57,6 +57,7 @@ Bundle 'vim-scripts/ZoomWin'
 Bundle 'jeetsukumaran/vim-buffergator'
 Bundle 'godlygeek/tabular'
 Bundle 'plasticboy/vim-markdown'
+Bundle 'altercation/vim-colors-solarized'
 "}}}
 "GENERAL SETTINGS {{{
 
