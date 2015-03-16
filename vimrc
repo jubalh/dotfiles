@@ -80,6 +80,7 @@ set wildmenu
 set ttyfast
 set cursorline
 set noerrorbells
+set novisualbell
 set mouse=a
 set cmdheight=2
 set laststatus=2
@@ -110,23 +111,21 @@ endif
 
 set background=dark
 colorscheme Tomorrow-Night
-"silent that bell
-set vb
 
 "folding is too slow
 let g:pandoc_no_folding = 1
 
 if has("gui_running")
 	"no toolbar
-	"	set guioptions-=T
+		set guioptions-=T
 	"no menubar
 	"	set guioptions-=m
 	if has('gui_macvim')
 		set guifont=Monaco:h12
 	endif
-	if has('gui_gtk2')
-		set guifont=Monospace\ 13
-	endif
+	"if has('gui_gtk2')
+		"set guifont=Monospace\ 13
+	"endif
 	if has("gui_win32")
 		set guifont=Consolas:h12
 		"maximize window
