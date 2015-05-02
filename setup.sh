@@ -41,9 +41,9 @@ fi
 # {{{ ZSH
 if [[ ! -d "$PATH_ZSHCONF" ]] ; then
 	git clone https://github.com/jubalh/zorro $PATH_ZSHCONF
+	ln -s "$PATH_ZSHCONF/zshrc" ~/.zshrc
+	ln -s "$PATH_ZSHCONF/zshrc.local" ~/.zshrc.local
 fi
-link_to "$PATH_ZSHCONF/zshrc" ~/.zshrc
-link_to "$PATH_ZSHCONF/zshrc.local" ~/.zshrc.local
 #chsh -s /bin/zsh
 # }}}
 # {{{ VIM
