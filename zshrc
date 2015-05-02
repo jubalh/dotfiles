@@ -4,6 +4,7 @@ ZSH_THEME="ys"
 
 #others I like
 #ZSH_THEME="af-magic"
+#ZSH_THEME="pure"
 #possible: "random"
 
 # Comment this out to disable weekly auto-update checks
@@ -80,4 +81,5 @@ set -o vi
 #export LANG=de_DE.UTF-8
 #export EDITOR=vim
 export GOPATH="$HOME/.golang"
+export GOBIN="$HOME/.golang/bin"
 export PATH="$PATH:$GOPATH/bin"
