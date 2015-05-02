@@ -9,7 +9,8 @@
 	excludesfile = ~/.gitignore
 
 [diff]
-	tool = vimdiff
+#	tool = vimdiff
+	tool = meld
 [difftool]
 	prompt = false
 
@@ -36,3 +37,4 @@
 	lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
 	ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
 	d = difftool
+	glog = log --oneline --decorate --color --graph
