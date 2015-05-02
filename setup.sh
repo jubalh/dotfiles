@@ -1,9 +1,6 @@
 #!/bin/zsh
 
-#to have acces to aliases. like my alias to use homebrews ctags instead of osx's.
-source ~/.zshrc
-
-PATH_OMZ=~/.oh-my-zsh
+PATH_ZSHCONF=~/.config/zorro
 PATH_VUNDLE=~/.vim/bundle/vundle
 PATH_VIMP_COLORS=~/.vimperator/colors
 
@@ -42,10 +39,11 @@ if [[ $1 == 'osx' ]] ; then
 fi
 # }}}
 # {{{ ZSH
-if [[ ! -d "$PATH_OMZ" ]] ; then
-	git clone https://github.com/robbyrussell/oh-my-zsh.git $PATH_OMZ
+if [[ ! -d "$PATH_ZSHCONF" ]] ; then
+	git clone https://github.com/jubalh/zorro $PATH_ZSHCONF
 fi
-link_to zshrc ~/.zshrc
+link_to "$PATH_ZSHCONF/zshrc" ~/.zshrc
+link_to "$PATH_ZSHCONF/zshrc.local" ~/.zshrc.local
 #chsh -s /bin/zsh
 # }}}
 # {{{ VIM
