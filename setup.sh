@@ -11,6 +11,7 @@ function link_to(){
 
 function nix(){
 	link_to tmux.conf ~/.tmux.conf
+	mkdir -p ~/.vifm
 	link_to vifmrc ~/.vifm/vifmrc
 }
 
