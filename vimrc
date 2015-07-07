@@ -24,6 +24,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-fugitive'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-session'
 Bundle 'chrisbra/color_highlight'
@@ -81,7 +82,7 @@ set ttyfast
 set cursorline
 set noerrorbells
 set novisualbell
-set mouse=a
+"set mouse=a
 set cmdheight=2
 set laststatus=2
 set backspace=2
