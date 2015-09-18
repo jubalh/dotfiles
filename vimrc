@@ -202,8 +202,6 @@ au Syntax * RainbowParenthesesLoadBraces
 "Airline SETTINGS {{{
 "display buffers on top
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_enable_branch = 1
-let g:airline_enable_syntastic = 1
 
 " unicode symbols instead of powrline patched font
 let g:airline_powerline_fonts = 0
