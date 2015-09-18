@@ -28,7 +28,7 @@ bindsym $mod+Shift+Q kill
 # start application launcher
 #bindsym $mod+d exec dmenu_run '#010101' -nf '#85753A' -sb '#1E1E1E' -sf '#F5DEB3'
 #bindsym $mod+d exec i3-dmenu-desktop
-bindsym $mod+space "exec rofi -show run"
+bindsym $alt+space "exec rofi -show run"
 bindsym $alt+Tab "exec rofi -show window"
 
 # start web browser
@@ -192,3 +192,5 @@ bindsym Return mode "default"
 bindsym Escape mode "default"
 }
 new_window 1pixel
+
+exec --no-startup-id "/bin/bash /home/michael/.config/openbox/autostart"
